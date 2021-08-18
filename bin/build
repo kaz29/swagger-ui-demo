@@ -6,10 +6,7 @@ if [ ! -d "OUT" ];then
     mkdir out
 fi
 
-echo $DIR
 curl -OL https://petstore.swagger.io/v2/swagger.json --output swagger.json
-ls -al $DIR
 cp node_modules/swagger-ui-dist/* $DIR/out/
 cp swagger.json $DIR/out/
 sed -i "s|https://petstore.swagger.io/v2/swagger.json|swagger.json|g" $DIR/out/index.html
-ls -al $DIR/out
