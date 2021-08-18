@@ -9,4 +9,5 @@ fi
 curl -OL https://petstore.swagger.io/v2/swagger.json --output swagger.json
 cp node_modules/swagger-ui-dist/* $DIR/out/
 cp swagger.json $DIR/out/
+cp staticwebapp.config.json $DIR/out/
 sed -i "s|https://petstore.swagger.io/v2/swagger.json|swagger.json|g" $DIR/out/index.html
