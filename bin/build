@@ -1,0 +1,11 @@
+#!/bin/sh
+
+DIR=`pwd`
+
+if [ ! -d "OUT" ];then
+    mkdir out
+fi
+
+cp node_modules/swagger-ui-dist/* $DIR/out/
+curl -OL https://petstore.swagger.io/v2/swagger.json --output-dir $DIR/out/
+sed -i "s|https://petstore.swagger.io/v2/swagger.json|swagger.json|g" $DIR/out/index.html
