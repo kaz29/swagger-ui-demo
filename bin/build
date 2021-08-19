@@ -6,6 +6,7 @@ if [ ! -d "OUT" ];then
     mkdir out
 fi
 
+env
 curl -OL https://petstore.swagger.io/v2/swagger.json --output swagger.json
 cp node_modules/swagger-ui-dist/* $DIR/out/
 cp swagger.json $DIR/out/
