@@ -1,14 +1,11 @@
 #!/bin/sh
 
-DIR=`pwd`
-
-if [ ! -d "OUT" ];then
-    mkdir out
+if [ ! -d "$SOURCE_DIR/OUT" ];then
+    mkdir $SOURCE_DIR/out
 fi
 
-env
 curl -OL https://petstore.swagger.io/v2/swagger.json --output swagger.json
-cp node_modules/swagger-ui-dist/* $DIR/out/
-cp swagger.json $DIR/out/
-cp staticwebapp.config.json $DIR/out/
-sed -i "s|https://petstore.swagger.io/v2/swagger.json|swagger.json|g" $DIR/out/index.html
+cp node_modules/swagger-ui-dist/* $SOURCE_DIR/out/
+cp swagger.json $SOURCE_DIR/out/
+cp staticwebapp.config.json $SOURCE_DIR/out/
+sed -i "s|https://petstore.swagger.io/v2/swagger.json|swagger.json|g" $SOURCE_DIR/out/index.html
